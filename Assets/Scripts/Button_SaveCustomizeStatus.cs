@@ -3,16 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button_CustomizeStateSave : MonoBehaviour {
-
-    private static string saveFilePath;
+public class Button_SaveCustomizeStatus : MonoBehaviour {
 
     public GameObject CustomizeStatusManagerObject;
-
-    private void Awake()
-    {
-        saveFilePath = Path.Combine(Application.dataPath, "CustomizeData/avatar_customize_data.json");
-    }
 
     public void OnPressedSaveButton()
     {
@@ -34,10 +27,11 @@ public class Button_CustomizeStateSave : MonoBehaviour {
         if (state != null)
         {
             string json = JsonUtility.ToJson(state, true);
-            using (var sw = File.CreateText(saveFilePath))
+            using (var sw = File.CreateText(CustomizeEditorConstants.FilePath2CusomizeData))
             {
                 sw.Write(json);
             }
+            Debug.Log("Saved customize status.");
         }
     }
 }
