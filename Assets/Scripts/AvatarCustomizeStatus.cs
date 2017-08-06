@@ -17,7 +17,7 @@ public enum CustomizePartsType
 }
 
 [System.Serializable]
-public class AvatarCustomizeStatus : MonoBehaviour
+public class AvatarCustomizeStatus
 {
     public int TopsModel;
     public int TopsMaterial;

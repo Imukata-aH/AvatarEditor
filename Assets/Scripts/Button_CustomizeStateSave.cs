@@ -7,7 +7,7 @@ public class Button_CustomizeStateSave : MonoBehaviour {
 
     private static string saveFilePath;
 
-    public GameObject CustomizeStatusObject;
+    public GameObject CustomizeStatusManagerObject;
 
     private void Awake()
     {
@@ -16,24 +16,28 @@ public class Button_CustomizeStateSave : MonoBehaviour {
 
     public void OnPressedSaveButton()
     {
-        if(this.CustomizeStatusObject == null)
+        if(this.CustomizeStatusManagerObject == null)
         {
-            Debug.LogError("CustomizeStatusObject instance is not set.");
+            Debug.LogError("CustomizeStatusManagerObject instance is not set.");
             return;
         }
 
-        var state = this.CustomizeStatusObject.GetComponent<AvatarCustomizeStatus>();
-        if(state == null)
+        var stateManager = this.CustomizeStatusManagerObject.GetComponent<AvatarCustomizeStateManager>();
+        if(stateManager == null)
         {
-            Debug.LogError("CustomizeStatusObject doesn't have a component AvatarCustomizeStatus");
+            Debug.LogError("CustomizeStatusManagerObject doesn't have a component AvatarCustomizeStatus");
             return;
         }
 
-        string json = JsonUtility.ToJson(state, true);
-        using (var sw = File.CreateText(saveFilePath))
-        {
-            sw.Write(json);
-        }
+        AvatarCustomizeStatus state = stateManager.GetCustomizeStatus();
 
+        if (state != null)
+        {
+            string json = JsonUtility.ToJson(state, true);
+            using (var sw = File.CreateText(saveFilePath))
+            {
+                sw.Write(json);
+            }
+        }
     }
 }
