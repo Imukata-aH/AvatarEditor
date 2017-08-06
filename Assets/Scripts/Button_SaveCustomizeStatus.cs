@@ -31,6 +31,7 @@ public class Button_SaveCustomizeStatus : MonoBehaviour {
             {
                 sw.Write(json);
             }
+            // Utilities.ShowJsonData(json);   // TODO: JSONの中身を表示
             Debug.Log("Saved customize status.");
         }
     }
