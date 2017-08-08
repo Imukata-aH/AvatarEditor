@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98a014857ee464abf9adc891bd27f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CustomizeStatusObject: {fileID: 908030197}
+  CustomizeStatusManagerObject: {fileID: 908030197}
 --- !u!114 &72347045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 503587776}
   - component: {fileID: 503587775}
   - component: {fileID: 503587774}
+  - component: {fileID: 503587777}
   m_Layer: 5
   m_Name: LoadButton
   m_TagString: Untagged
@@ -318,7 +319,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 503587775}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 503587777}
+        m_MethodName: OnPressedLoadButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &503587775
@@ -354,6 +366,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503587772}
+--- !u!114 &503587777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503587772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a2aa138b847ad4e8a461c1a0050a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CustomizeStatusManagerObject: {fileID: 908030197}
 --- !u!1 &908030197
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +388,7 @@ GameObject:
   - component: {fileID: 908030199}
   - component: {fileID: 908030198}
   m_Layer: 5
-  m_Name: CustomizeStateObject
+  m_Name: CustomizeStateMangerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +402,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 908030197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d738f5fcec012c74299284806e12108c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d7019b815368404783b37e229de7c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &908030199
