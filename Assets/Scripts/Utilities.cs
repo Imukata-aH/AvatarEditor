@@ -20,7 +20,7 @@ public class Utilities
             }
             if (!string.IsNullOrEmpty(jsonCustomizeData))
             {
-                T customizeState = JsonUtility.FromJson<T>(jsonCustomizeData);
+                ret = JsonUtility.FromJson<T>(jsonCustomizeData);
                 Debug.Log("Loaded customize status.");
                 // Utilities.ShowJsonData(jsonCustomizeData);   // TODO: JSONの中身を表示
             }
