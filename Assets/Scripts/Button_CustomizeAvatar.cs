@@ -25,9 +25,9 @@ public class Button_CustomizeAvatar : MonoBehaviour {
 
             this.partsCategory = (CustomizePartsCategory)metadata.AssetCategory;
 
-            //Sprite assetImage = LoadAssetImage(assetIndex);
-            //Image assetImageBox = this.transform.Find("AssetThumbImage").GetComponent<Image>();
-            //assetImageBox.sprite = assetImage;
+            Sprite assetImage = LoadAssetImage(assetIndex);
+            Image assetImageBox = this.transform.Find("AssetThumbImage").GetComponent<Image>();
+            assetImageBox.sprite = assetImage;
         }
     }
 
@@ -38,7 +38,8 @@ public class Button_CustomizeAvatar : MonoBehaviour {
 
     private Sprite LoadAssetImage(uint assetIndex)
     {
-        throw new NotImplementedException();
+        return Resources.Load<Sprite>(Path.Combine(Path.Combine(CustomizeEditorConstants.AvatarAssetResourcesDirName, assetIndex.ToString()), CustomizeEditorConstants.ThumbnailFilename));
+
     }
 
     private void Start()
