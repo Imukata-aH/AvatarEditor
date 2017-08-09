@@ -23,16 +23,6 @@ public class Button_SaveCustomizeStatus : MonoBehaviour {
         }
 
         AvatarCustomizeStatus state = stateManager.GetCustomizeStatus();
-
-        if (state != null)
-        {
-            string json = JsonUtility.ToJson(state, true);
-            using (var sw = File.CreateText(CustomizeEditorConstants.FilePath2CusomizeData))
-            {
-                sw.Write(json);
-            }
-            // Utilities.ShowJsonData(json);   // TODO: JSONの中身を表示
-            Debug.Log("Saved customize status.");
-        }
+        Utilities.WriteJsonToFile<AvatarCustomizeStatus>(CustomizeEditorConstants.FilePath2CusomizeData, state);
     }
 }

@@ -22,20 +22,10 @@ public class Button_LoadCustomizeStatus : MonoBehaviour {
             return;
         }
 
-        if (File.Exists(CustomizeEditorConstants.FilePath2CusomizeData))
+        var customizeState = Utilities.LoadJsonFromFile<AvatarCustomizeStatus>(CustomizeEditorConstants.FilePath2CusomizeData);
+        if(customizeState != null)
         {
-            string jsonCustomizeData = "";
-            using (var streamReader = new StreamReader(CustomizeEditorConstants.FilePath2CusomizeData))
-            {
-                jsonCustomizeData = streamReader.ReadToEnd();
-            }
-            if (!string.IsNullOrEmpty(jsonCustomizeData))
-            {
-                AvatarCustomizeStatus customizeState = JsonUtility.FromJson<AvatarCustomizeStatus>(jsonCustomizeData);
-                stateManager.ReplaceCustomizeState(customizeState);
-                Debug.Log("Loaded customize status.");
-                // Utilities.ShowJsonData(jsonCustomizeData);   // TODO: JSONの中身を表示
-            }
+            stateManager.ReplaceCustomizeState(customizeState);
         }
     }
 }
