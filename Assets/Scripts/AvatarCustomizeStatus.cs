@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CustomizePartsType
+public enum CustomizePartsCategory
 {
     TopsModel,
     BottomsModel,
@@ -16,17 +16,17 @@ public class AvatarCustomizeStatus
     public int BottomsModel;
     public int ShoesModel;
 
-    public void SetCustomizeState(CustomizePartsType type, int index)
+    public void SetCustomizeState(CustomizePartsCategory type, int index)
     {
         switch (type)
         {
-            case CustomizePartsType.TopsModel:
+            case CustomizePartsCategory.TopsModel:
                 this.TopsModel = index;
                 break;
-            case CustomizePartsType.BottomsModel:
+            case CustomizePartsCategory.BottomsModel:
                 this.BottomsModel = index;
                 break;
-            case CustomizePartsType.ShoesModel:
+            case CustomizePartsCategory.ShoesModel:
                 this.ShoesModel = index;
                 break;
             default:

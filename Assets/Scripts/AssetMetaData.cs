@@ -6,4 +6,5 @@ using UnityEngine;
 public class AssetMetaData{
     public uint AssetID;
     public string AssetName;
+    public uint AssetCategory;
 }

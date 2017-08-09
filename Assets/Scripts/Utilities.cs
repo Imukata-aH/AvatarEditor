@@ -13,14 +13,14 @@ public class Utilities
 
         if (File.Exists(filePath))
         {
-            string jsonCustomizeData = "";
-            using (var streamReader = new StreamReader(CustomizeEditorConstants.FilePath2CusomizeData))
+            string jsonData = "";
+            using (var streamReader = new StreamReader(filePath))
             {
-                jsonCustomizeData = streamReader.ReadToEnd();
+                jsonData = streamReader.ReadToEnd();
             }
-            if (!string.IsNullOrEmpty(jsonCustomizeData))
+            if (!string.IsNullOrEmpty(jsonData))
             {
-                ret = JsonUtility.FromJson<T>(jsonCustomizeData);
+                ret = JsonUtility.FromJson<T>(jsonData);
                 Debug.Log("Loaded customize status.");
                 // Utilities.ShowJsonData(jsonCustomizeData);   // TODO: JSONの中身を表示
             }
