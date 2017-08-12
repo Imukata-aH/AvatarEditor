@@ -21,8 +21,7 @@ public class Utilities
             if (!string.IsNullOrEmpty(jsonData))
             {
                 ret = JsonUtility.FromJson<T>(jsonData);
-                Debug.Log("Loaded customize status.");
-                // Utilities.ShowJsonData(jsonCustomizeData);   // TODO: JSONの中身を表示
+                Debug.LogFormat("Loaded customize status.\n{0}", jsonData);
             }
         }
 
@@ -36,7 +35,6 @@ public class Utilities
         {
             sw.Write(json);
         }
-        // Utilities.ShowJsonData(json);   // TODO: JSONの中身を表示
-        Debug.Log("Saved customize status.");
+        Debug.LogFormat("Saved customize status.\n{0}", json);
     }
 }
