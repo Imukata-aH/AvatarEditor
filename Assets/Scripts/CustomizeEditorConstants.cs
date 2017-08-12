@@ -16,4 +16,6 @@ public class CustomizeEditorConstants : MonoBehaviour
     public static readonly string FilenameAssetMetadata = "asset_metadata.json";
 
     public static readonly string ThumbnailFilename = "thumb";
+
+    public static readonly string CommonAssetName = "asset";
 }

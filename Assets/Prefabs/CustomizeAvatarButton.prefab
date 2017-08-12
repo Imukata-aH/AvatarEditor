@@ -102,7 +102,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114670877416858058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114335965025597554}
+        m_MethodName: OnPressedCustomize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114335965025597554
@@ -117,6 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssetID: 0
+  avatarCustomizeStateManager: {fileID: 114778843307278310, guid: b11567ae47d22a2458b28a1b7d48f8b8,
+    type: 2}
 --- !u!114 &114359311862565890
 MonoBehaviour:
   m_ObjectHideFlags: 1

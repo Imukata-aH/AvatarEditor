@@ -12,11 +12,11 @@ public enum CustomizePartsCategory
 [System.Serializable]
 public class AvatarCustomizeStatus
 {
-    public int TopsModel;
-    public int BottomsModel;
-    public int ShoesModel;
+    public uint TopsModel;
+    public uint BottomsModel;
+    public uint ShoesModel;
 
-    public void SetCustomizeState(CustomizePartsCategory type, int index)
+    public void SetCustomizeState(CustomizePartsCategory type, uint index)
     {
         switch (type)
         {
@@ -31,6 +31,21 @@ public class AvatarCustomizeStatus
                 break;
             default:
                 break;
+        }
+    }
+
+    public uint GetCustomizeState(CustomizePartsCategory type)
+    {
+        switch (type)
+        {
+            case CustomizePartsCategory.TopsModel:
+                return this.TopsModel;
+            case CustomizePartsCategory.BottomsModel:
+                return this.BottomsModel;
+            case CustomizePartsCategory.ShoesModel:
+                return this.ShoesModel;
+            default:
+                return 0;
         }
     }
 }

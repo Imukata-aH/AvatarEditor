@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Button_CustomizeAvatar : MonoBehaviour {
 
     public uint AssetID;
+    public AvatarCustomizeStateManager avatarCustomizeStateManager;
 
     private CustomizePartsCategory partsCategory;
 
@@ -31,6 +32,11 @@ public class Button_CustomizeAvatar : MonoBehaviour {
         }
     }
 
+    public void OnPressedCustomize()
+    {
+        avatarCustomizeStateManager.SetCustomizeState(this.partsCategory, this.AssetID);
+    }
+
     private AssetMetaData LoadAssetMetadata(uint assetIndex)
     {
         return Utilities.LoadJsonFromFile<AssetMetaData>(Path.Combine(Path.Combine(CustomizeEditorConstants.DirectoryPath2AssetData, assetIndex.ToString()), CustomizeEditorConstants.FilenameAssetMetadata));
@@ -45,6 +51,7 @@ public class Button_CustomizeAvatar : MonoBehaviour {
     private void Start()
     {
         // for test.
+        // 本当は利用可能なアセットのインデックスを渡してもらう
         LoadTargetAssetData(this.AssetID);
     }
 }
